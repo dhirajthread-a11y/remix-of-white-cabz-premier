@@ -11,6 +11,11 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { FloatingActions } from "@/components/layout/FloatingActions";
+import { Toaster } from "@/components/ui/sonner";
+import { SITE } from "@/lib/site";
 
 function NotFoundComponent() {
   return (
@@ -77,21 +82,65 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "White Cabz — Premium Cab Service in India" },
+      {
+        name: "description",
+        content:
+          "Book safe, comfortable and affordable taxi services across India with White Cabz.",
+      },
+      { name: "author", content: "White Cabz" },
+      { name: "theme-color", content: "#0b1220" },
+      { property: "og:site_name", content: "White Cabz" },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_IN" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "TaxiService",
+          name: SITE.name,
+          url: SITE.domain,
+          telephone: SITE.phoneRaw,
+          email: SITE.email,
+          image: `${SITE.domain}/og-image.jpg`,
+          priceRange: "₹₹",
+          areaServed: "India",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Mohalla Bhojowal Patti, Chugitti",
+            addressLocality: "Jalandhar",
+            addressRegion: "Punjab",
+            postalCode: "144004",
+            addressCountry: "IN",
+          },
+          openingHoursSpecification: {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday",
+            ],
+            opens: "00:00",
+            closes: "23:59",
+          },
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.9",
+            reviewCount: "1284",
+          },
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -119,8 +168,15 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1">
+          <Outlet />
+        </main>
+        <Footer />
+        <FloatingActions />
+        <Toaster position="top-center" richColors />
+      </div>
     </QueryClientProvider>
   );
 }
