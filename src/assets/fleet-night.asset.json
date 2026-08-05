@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "6d66b3cd-b8a0-405d-a2b3-0a4e5c50cb25",
-  "project_id": "f5af03ed-fa34-4160-a258-7adb13a1e397",
-  "url": "/__l5e/assets-v1/6d66b3cd-b8a0-405d-a2b3-0a4e5c50cb25/fleet-night.jpg",
-  "r2_key": "a/v1/f5af03ed-fa34-4160-a258-7adb13a1e397/6d66b3cd-b8a0-405d-a2b3-0a4e5c50cb25/fleet-night.jpg",
-  "original_filename": "fleet-night.jpg",
-  "size": 154218,
   "content_type": "image/jpeg",
-  "created_at": "2026-08-05T15:05:52Z"
+  "created_at": "2026-08-05T15:05:52Z",
+  "original_filename": "fleet-night.jpg",
+  "project_id": "4a956fb6-b8bd-4f7a-94b2-fcd4ca4dbd50",
+  "r2_key": "a/v1/4a956fb6-b8bd-4f7a-94b2-fcd4ca4dbd50/6d66b3cd-b8a0-405d-a2b3-0a4e5c50cb25/fleet-night.jpg",
+  "size": 154218,
+  "url": "/__l5e/assets-v1/6d66b3cd-b8a0-405d-a2b3-0a4e5c50cb25/fleet-night.jpg",
+  "version": 1
 }
