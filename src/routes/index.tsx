@@ -63,14 +63,18 @@ function Home() {
     <>
       <section className="relative isolate overflow-hidden">
         <img
-          src={heroCab}
-          alt="White Cabz premium white taxi driving through a city at night"
-          width={1920}
-          height={1088}
+          src={IMAGES.fleetNight}
+          alt="White Cabz fleet — Ertiga and Kia SUV taxis ready for booking in Jalandhar"
+          width={1600}
+          height={1200}
           fetchPriority="high"
-          className="absolute inset-0 size-full object-cover"
+          className="absolute inset-0 size-full scale-105 object-cover"
         />
         <div className="bg-hero-gradient absolute inset-0 opacity-90" aria-hidden="true" />
+        <div
+          className="absolute inset-0 bg-[radial-gradient(70%_60%_at_25%_35%,transparent,hsl(0_0%_0%/0.65))]"
+          aria-hidden="true"
+        />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:items-center lg:py-28 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
@@ -81,14 +85,24 @@ function Home() {
               <ShieldCheck className="size-3.5 text-primary-glow" aria-hidden="true" />
               Trusted by 25,000+ travellers across India
             </span>
-            <h1 className="mt-6 text-4xl leading-[1.08] font-extrabold text-ink-foreground sm:text-5xl lg:text-6xl">
-              Reliable Cab Services{" "}
-              <span className="text-gradient">Across India</span>
+            <h1 className="mt-6 font-display text-4xl leading-[1.05] font-extrabold tracking-tight text-ink-foreground sm:text-5xl lg:text-[4rem]">
+              Your ride is one{" "}
+              <span className="text-gradient">tap away</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-foreground/75">
-              Book safe, comfortable, and affordable taxi services for local, outstation, airport
-              transfers, and corporate travel.
+              Safe, spotless and affordable cabs for local, outstation, airport and wedding travel —
+              booked instantly on WhatsApp and email.
             </p>
+            <ul className="mt-6 flex flex-wrap gap-2">
+              {["Verified drivers", "24/7 pickups", "No hidden charges", "GPS tracked"].map((f) => (
+                <li
+                  key={f}
+                  className="rounded-full border border-ink-foreground/15 bg-ink-foreground/5 px-3 py-1.5 text-xs font-medium text-ink-foreground/80 backdrop-blur-sm"
+                >
+                  {f}
+                </li>
+              ))}
+            </ul>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild variant="hero" size="xl">
                 <Link to="/contact">
@@ -128,6 +142,7 @@ function Home() {
           </motion.div>
         </div>
       </section>
+
 
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
