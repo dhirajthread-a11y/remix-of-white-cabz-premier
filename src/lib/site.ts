@@ -30,3 +30,16 @@ export const NAV = [
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ] as const;
+
+export function mailtoLink(subject: string, body: string) {
+  return `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+/** Sends the booking both ways: opens WhatsApp chat and the user's mail client. */
+export function sendBooking(subject: string, message: string) {
+  if (typeof window === "undefined") return;
+  window.open(waLink(message), "_blank", "noopener,noreferrer");
+  window.setTimeout(() => {
+    window.location.href = mailtoLink(subject, message);
+  }, 900);
+}
