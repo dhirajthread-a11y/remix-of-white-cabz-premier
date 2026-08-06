@@ -1,25 +1,23 @@
-import hatchback from "@/assets/hatchback.jpg";
-import sedan from "@/assets/sedan.jpg";
-import innova from "@/assets/innova.jpg";
-import tempo from "@/assets/tempo.jpg";
-import luxury from "@/assets/luxury.jpg";
 import suvAsset from "@/assets/suv.asset.json";
 import ertigaAsset from "@/assets/ertiga.asset.json";
 import weddingAsset from "@/assets/wedding-car.asset.json";
+import weddingHoodAsset from "@/assets/wedding-hood.png.asset.json";
 import fleetNightAsset from "@/assets/fleet-night.asset.json";
 import ertigaFrontAsset from "@/assets/ertiga-front.asset.json";
 
 export const IMAGES = {
-  hatchback,
-  sedan,
-  innova,
-  tempo,
-  luxury,
   suv: suvAsset.url,
   ertiga: ertigaAsset.url,
   wedding: weddingAsset.url,
+  weddingHood: weddingHoodAsset.url,
   fleetNight: fleetNightAsset.url,
   ertigaFront: ertigaFrontAsset.url,
+  // aliases kept so existing content keeps working, all real fleet photos
+  hatchback: suvAsset.url,
+  sedan: ertigaFrontAsset.url,
+  innova: ertigaAsset.url,
+  tempo: fleetNightAsset.url,
+  luxury: weddingHoodAsset.url,
 };
 
 export type Service = {
