@@ -7,10 +7,10 @@ import { NAV, SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 function useDarkMode() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
   useEffect(() => {
     const stored = window.localStorage.getItem("wc-theme");
-    const enabled = stored === "dark";
+    const enabled = stored ? stored === "dark" : true;
     setDark(enabled);
     document.documentElement.classList.toggle("dark", enabled);
   }, []);

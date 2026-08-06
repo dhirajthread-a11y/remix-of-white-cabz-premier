@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>White Cabz — Reliable Cab Services Across India | Book Taxi 24/7</title>
+    <meta name="description" content="Book safe, comfortable and affordable taxi services across India with White Cabz." />
+    <meta name="author" content="White Cabz" />
+    <meta name="theme-color" content="#0b1220" />
+    
+    <script>
+      try {
+        const stored = localStorage.getItem('wc-theme');
+        if (stored === 'light') {
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (_) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
