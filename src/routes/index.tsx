@@ -69,9 +69,9 @@ function Home() {
           fetchPriority="high"
           className="absolute inset-0 size-full scale-105 object-cover"
         />
-        <div className="bg-hero-gradient absolute inset-0 opacity-90" aria-hidden="true" />
+        <div className="bg-hero-gradient absolute inset-0 opacity-75" aria-hidden="true" />
         <div
-          className="absolute inset-0 bg-[radial-gradient(70%_60%_at_25%_35%,transparent,hsl(0_0%_0%/0.65))]"
+          className="absolute inset-0 bg-[radial-gradient(75%_65%_at_28%_40%,transparent,hsl(0_0%_0%/0.45))]"
           aria-hidden="true"
         />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:items-center lg:py-28 lg:px-8">
