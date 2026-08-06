@@ -23,7 +23,7 @@ import { CtaBand } from "@/components/CtaBand";
 import { ReviewCard, Stars } from "@/components/ReviewCard";
 import { FLEET, REVIEWS, SERVICES } from "@/lib/data";
 import { waLink } from "@/lib/site";
-import heroCab from "@/assets/hero-cab.jpg";
+import { IMAGES } from "@/lib/data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
