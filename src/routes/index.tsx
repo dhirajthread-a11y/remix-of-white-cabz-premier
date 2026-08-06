@@ -21,9 +21,8 @@ import { StatsBand } from "@/components/StatsBand";
 import { FaqSection } from "@/components/FaqSection";
 import { CtaBand } from "@/components/CtaBand";
 import { ReviewCard, Stars } from "@/components/ReviewCard";
-import { FLEET, REVIEWS, SERVICES } from "@/lib/data";
+import { FLEET, IMAGES, REVIEWS, SERVICES } from "@/lib/data";
 import { waLink } from "@/lib/site";
-import { IMAGES } from "@/lib/data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
