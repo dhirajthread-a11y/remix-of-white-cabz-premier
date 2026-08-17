@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, Phone, Moon, Sun, Car } from "lucide-react";
+import { Menu, Phone, Moon, Sun } from "lucide-react";
+import logoAsset from "@/assets/logo.asset.json";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { NAV, SITE } from "@/lib/site";
@@ -51,9 +52,13 @@ export function Header() {
         className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8"
       >
         <Link to="/" className="flex items-center gap-2.5" aria-label="White Cabz home">
-          <span className="bg-primary-gradient flex size-9 items-center justify-center rounded-xl shadow-glow">
-            <Car className="size-5 text-primary-foreground" aria-hidden="true" />
-          </span>
+          <img
+            src={logoAsset.url}
+            alt="White Cabz Tour & Travels logo"
+            width={40}
+            height={40}
+            className="size-10 rounded-xl object-cover shadow-glow ring-1 ring-border"
+          />
           <span className="font-display text-lg leading-none font-extrabold tracking-tight">
             White<span className="text-primary">Cabz</span>
           </span>
