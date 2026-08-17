@@ -4,8 +4,10 @@ import weddingAsset from "@/assets/wedding-car.asset.json";
 import weddingHoodAsset from "@/assets/wedding-hood.png.asset.json";
 import fleetNightAsset from "@/assets/fleet-night.asset.json";
 import ertigaFrontAsset from "@/assets/ertiga-front.asset.json";
+import logoAsset from "@/assets/logo.asset.json";
 
 export const IMAGES = {
+  logo: logoAsset.url,
   suv: suvAsset.url,
   ertiga: ertigaAsset.url,
   wedding: weddingAsset.url,

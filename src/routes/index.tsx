@@ -67,32 +67,67 @@ function Home() {
           width={1600}
           height={1200}
           fetchPriority="high"
-          className="absolute inset-0 size-full scale-105 object-cover"
+          className="absolute inset-0 size-full scale-110 object-cover"
         />
-        <div className="bg-hero-gradient absolute inset-0 opacity-75" aria-hidden="true" />
+        {/* cinematic layers */}
         <div
-          className="absolute inset-0 bg-[radial-gradient(75%_65%_at_28%_40%,transparent,hsl(0_0%_0%/0.45))]"
+          className="absolute inset-0 bg-[linear-gradient(105deg,hsl(0_0%_4%/0.94)_0%,hsl(0_0%_4%/0.78)_42%,hsl(0_0%_4%/0.35)_72%,transparent_100%)]"
           aria-hidden="true"
         />
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:items-center lg:py-28 lg:px-8">
+        <div
+          className="absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_120%,hsl(0_0%_0%/0.85),transparent_60%)]"
+          aria-hidden="true"
+        />
+        <motion.div
+          aria-hidden="true"
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.4, ease: "easeOut" }}
+          className="absolute -top-40 -left-24 size-[28rem] rounded-full bg-primary/25 blur-3xl"
+        />
+        <motion.div
+          aria-hidden="true"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.6, delay: 0.2 }}
+          className="absolute right-[-10%] bottom-[-20%] size-[26rem] rounded-full bg-primary-glow/20 blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,hsl(0_0%_100%)_1px,transparent_1px),linear-gradient(to_bottom,hsl(0_0%_100%)_1px,transparent_1px)] bg-[size:64px_64px]"
+        />
+
+        <div className="relative mx-auto grid max-w-7xl gap-14 px-4 py-24 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-32 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-ink-foreground/20 bg-ink-foreground/10 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-ink-foreground/85 backdrop-blur-sm">
-              <ShieldCheck className="size-3.5 text-primary-glow" aria-hidden="true" />
-              Trusted by 25,000+ travellers across India
-            </span>
-            <h1 className="mt-6 font-display text-4xl leading-[1.05] font-extrabold tracking-tight text-ink-foreground sm:text-5xl lg:text-[4rem]">
-              Your ride is one{" "}
-              <span className="text-gradient">tap away</span>
+            <div className="flex items-center gap-3">
+              <img
+                src={IMAGES.logo}
+                alt="White Cabz Tour & Travels"
+                width={56}
+                height={56}
+                className="size-14 rounded-2xl object-cover shadow-elegant ring-1 ring-ink-foreground/15"
+              />
+              <span className="inline-flex items-center gap-2 rounded-full border border-ink-foreground/20 bg-ink-foreground/10 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-ink-foreground/85 backdrop-blur-md">
+                <ShieldCheck className="size-3.5 text-primary-glow" aria-hidden="true" />
+                25,000+ travellers · 24/7 service
+              </span>
+            </div>
+
+            <h1 className="mt-7 font-display text-[2.6rem] leading-[1.02] font-extrabold tracking-tight text-ink-foreground sm:text-6xl lg:text-[4.4rem]">
+              Premium cabs.
+              <br />
+              <span className="text-gradient">One tap away.</span>
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-foreground/75">
-              Safe, spotless and affordable cabs for local, outstation, airport and wedding travel —
-              booked instantly on WhatsApp and email.
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-foreground/75">
+              Spotless, GPS-tracked cars with police-verified chauffeurs — for local runs, outstation
+              highways, airport transfers and weddings. Confirmed instantly on WhatsApp.
             </p>
-            <ul className="mt-6 flex flex-wrap gap-2">
+
+            <ul className="mt-7 flex flex-wrap gap-2">
               {["Verified drivers", "24/7 pickups", "No hidden charges", "GPS tracked"].map((f) => (
                 <li
                   key={f}
@@ -102,7 +137,8 @@ function Home() {
                 </li>
               ))}
             </ul>
-            <div className="mt-8 flex flex-wrap gap-3">
+
+            <div className="mt-9 flex flex-wrap gap-3">
               <Button asChild variant="hero" size="xl">
                 <Link to="/contact">
                   Book Now <ArrowRight />
@@ -118,15 +154,16 @@ function Home() {
                 </a>
               </Button>
             </div>
-            <dl className="mt-10 grid max-w-md grid-cols-3 gap-4 border-t border-ink-foreground/15 pt-6">
+
+            <dl className="mt-11 grid max-w-lg grid-cols-3 divide-x divide-ink-foreground/10 rounded-2xl border border-ink-foreground/10 bg-ink-foreground/5 p-5 backdrop-blur-md">
               {[
                 ["4.9★", "Average rating"],
                 ["50+", "Cities covered"],
                 ["24/7", "Support"],
               ].map(([v, l]) => (
-                <div key={l}>
+                <div key={l} className="px-3 first:pl-0 last:pr-0">
                   <dt className="font-display text-2xl font-bold text-ink-foreground">{v}</dt>
-                  <dd className="text-xs text-ink-foreground/60">{l}</dd>
+                  <dd className="mt-0.5 text-xs text-ink-foreground/60">{l}</dd>
                 </div>
               ))}
             </dl>
@@ -136,11 +173,24 @@ function Home() {
             initial={{ opacity: 0, y: 34 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="relative"
           >
-            <BookingForm />
+            <div
+              aria-hidden="true"
+              className="bg-primary-gradient absolute -inset-1.5 rounded-[2rem] opacity-25 blur-xl"
+            />
+            <div className="relative rounded-[1.6rem] border border-ink-foreground/12 bg-background/95 p-1 shadow-elegant backdrop-blur-xl">
+              <BookingForm />
+            </div>
           </motion.div>
         </div>
+
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent"
+        />
       </section>
+
 
 
       <section className="py-20">
