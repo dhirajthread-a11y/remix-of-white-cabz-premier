@@ -83,18 +83,18 @@ function Home() {
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.4, ease: "easeOut" }}
-          className="absolute -top-40 -left-24 size-[34rem] rounded-full bg-primary/25 blur-[120px]"
+          className="absolute -top-40 -left-24 size-[28rem] rounded-full bg-primary/25 blur-3xl"
         />
         <motion.div
           aria-hidden="true"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.6, delay: 0.2 }}
-          className="absolute right-[-10%] bottom-[-20%] size-[30rem] rounded-full bg-primary-glow/20 blur-[130px]"
+          className="absolute right-[-10%] bottom-[-20%] size-[26rem] rounded-full bg-primary-glow/20 blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 opacity-[0.07] mix-blend-overlay bg-[linear-gradient(to_right,hsl(0_0%_100%)_1px,transparent_1px),linear-gradient(to_bottom,hsl(0_0%_100%)_1px,transparent_1px)] bg-[size:64px_64px]"
+          className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,hsl(0_0%_100%)_1px,transparent_1px),linear-gradient(to_bottom,hsl(0_0%_100%)_1px,transparent_1px)] bg-[size:64px_64px]"
         />
 
         <div className="relative mx-auto grid max-w-7xl gap-14 px-4 py-24 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-32 lg:px-8">
@@ -177,7 +177,7 @@ function Home() {
           >
             <div
               aria-hidden="true"
-              className="bg-primary-gradient absolute -inset-2 rounded-[2rem] opacity-25 blur-2xl"
+              className="bg-primary-gradient absolute -inset-1.5 rounded-[2rem] opacity-25 blur-xl"
             />
             <div className="relative rounded-[1.6rem] border border-ink-foreground/12 bg-background/95 p-1 shadow-elegant backdrop-blur-xl">
               <BookingForm />
